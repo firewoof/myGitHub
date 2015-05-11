@@ -16,6 +16,7 @@ public:
     SocketThread();
     ~SocketThread();
     
+    char* arry;
 };
 
 #endif /* defined(__testProject__SocketThread__) */

@@ -9,6 +9,7 @@
 #include <iostream>
 #include <netdb.h>
 #include "ByteCircle.h"
+#include "ByteUtil.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -16,10 +17,14 @@ int main(int argc, const char * argv[]) {
     
     //本地  测试
     ByteCircle* circle = new ByteCircle(15);
-    const unsigned char* data = (unsigned char*)"01234567";
+    int value = htonl(23);
+    
+    const unsigned char* data = (unsigned char*) &value;
+    printf(" value data length == %zd \n", strlen((const char*)data));
+    printf(" data == %d \n", ByteUtil::readInt(data));
     size_t length = strlen((const char*)data);
-    circle->pushData(data, 0, length);
-    printf(" data == %s \n", circle->getData(length));
+    circle->pushData(data, 0, sizeof(value));
+    printf(" data == %d \n", ByteUtil::readInt(circle->getData(sizeof(value))));
     circle->skip(length);
     
     const unsigned char* data2 = (unsigned char*)"zoulingying";

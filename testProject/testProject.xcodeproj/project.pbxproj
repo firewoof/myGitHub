@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E137E791B009E1800A90984 /* ByteUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E137E771B009E1800A90984 /* ByteUtil.cpp */; };
 		8C38BEDA1AF689C900C3C38A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C38BED91AF689C900C3C38A /* main.cpp */; };
 		8C38BEE01AF68E6E00C3C38A /* SocketUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C38BEDE1AF68E6E00C3C38A /* SocketUtil.cpp */; };
 		8C5BD4421AFE598100AA52A1 /* SocketThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C5BD4401AFE598100AA52A1 /* SocketThread.cpp */; };
@@ -26,6 +27,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2E137E771B009E1800A90984 /* ByteUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ByteUtil.cpp; sourceTree = "<group>"; };
+		2E137E781B009E1800A90984 /* ByteUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ByteUtil.h; sourceTree = "<group>"; };
+		2E137E7B1B00BCE500A90984 /* common */ = {isa = PBXFileReference; lastKnownFileType = folder; path = common; sourceTree = SOURCE_ROOT; };
 		8C38BED61AF689C900C3C38A /* testProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = testProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C38BED91AF689C900C3C38A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8C38BEDE1AF68E6E00C3C38A /* SocketUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SocketUtil.cpp; sourceTree = "<group>"; };
@@ -60,6 +64,7 @@
 		8C38BED81AF689C900C3C38A /* testProject */ = {
 			isa = PBXGroup;
 			children = (
+				2E137E7B1B00BCE500A90984 /* common */,
 				8C38BED91AF689C900C3C38A /* main.cpp */,
 				8C38BEDE1AF68E6E00C3C38A /* SocketUtil.cpp */,
 				8C38BEDF1AF68E6E00C3C38A /* SocketUtil.h */,
@@ -68,6 +73,8 @@
 				8C5BD4431AFE6C9600AA52A1 /* ByteCircle.cpp */,
 				8C5BD4441AFE6C9600AA52A1 /* ByteCircle.h */,
 				8C50C2421AFF9433007EFF72 /* ThreadMutex.h */,
+				2E137E771B009E1800A90984 /* ByteUtil.cpp */,
+				2E137E781B009E1800A90984 /* ByteUtil.h */,
 			);
 			path = testProject;
 			sourceTree = "<group>";
@@ -140,6 +147,7 @@
 				8C5BD4451AFE6C9600AA52A1 /* ByteCircle.cpp in Sources */,
 				8C38BEDA1AF689C900C3C38A /* main.cpp in Sources */,
 				8C5BD4421AFE598100AA52A1 /* SocketThread.cpp in Sources */,
+				2E137E791B009E1800A90984 /* ByteUtil.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

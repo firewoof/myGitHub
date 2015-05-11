@@ -12,10 +12,9 @@
 #include <iostream>
 
 class SocketUtil {
+public:
     SocketUtil();
     ~SocketUtil();
-    
-public:
     
     static int connect(const char* ip, unsigned short port);
     

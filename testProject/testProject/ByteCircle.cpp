@@ -6,6 +6,10 @@
 //
 
 #include "ByteCircle.h"
+#include "SocketThread.h"
+#include <memory>
+
+using namespace std;
 
 ByteCircle::ByteCircle(size_t _size)
 :dataHead(0)
@@ -63,6 +67,9 @@ int ByteCircle::pushData(const unsigned char* data, size_t start, size_t length)
 //获得指定长度的数据
 //返回的char*需要被主动释放
 unsigned char* ByteCircle::getData(size_t length){
+    //上锁
+    ThreadLock fileLock(lock);
+    
     if (length > dataLength) {
         return NULL;
     }
