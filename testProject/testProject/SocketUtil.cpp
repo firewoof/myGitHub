@@ -38,7 +38,7 @@ int SocketUtil::connect(const char* ip, unsigned short port){
     
     //打印地址端口
     const char* connectIp = inet_ntoa(sa.sin_addr);
-    printf("to be connectIp and port is %s:%d", connectIp, port);
+    printf("to be connectIp and port is %s:%d \n", connectIp, port);
     
     //创建socket
     int socketFd = socket(sa.sin_family, SOCK_DGRAM, 0);
@@ -54,7 +54,8 @@ int SocketUtil::connect(const char* ip, unsigned short port){
     int ret = ::connect(socketFd, (struct sockaddr *)&sa, sizeof(sa));
     
     if (ret>=0) {
-        printf("Client connect OK ！ address: %s:%d ",ip,port);
+        printf("socketFd: %d \n",socketFd);
+        printf("Client connect OK ！ address: %s:%d \n",ip,port);
         return socketFd;
     }
     
@@ -89,6 +90,7 @@ ssize_t SocketUtil::receiveData(int socketFd, unsigned char* buffer, const int64
         return -1;
     }
     ssize_t result = recv(socketFd, buffer, length, 0);
+    
     if (result < 0) {
         switch (errno) {
             case EAGAIN:
@@ -99,7 +101,7 @@ ssize_t SocketUtil::receiveData(int socketFd, unsigned char* buffer, const int64
                 return 0;
             default:
                 //其他错误 可能需要重新连接
-                printf("SocketUtil::receiveData errno:%d ", errno);
+                printf("SocketUtil::receiveData errno:%d \n", errno);
                 return -1;
                 break;
         }
@@ -113,7 +115,16 @@ ssize_t SocketUtil::receiveData(int socketFd, unsigned char* buffer, const int64
         // 这里表示对端的socket已正常关闭.
         return -1;
     }
-    return -1;
+    return 0;
+}
+
+ssize_t SocketUtil::sendData(int handle, const unsigned char* data, const int64_t& length){
+    if (data == nullptr) {
+        return -1;
+    }
+    size_t retLength = send(handle, data, length, 0);
+    printf("retLength == %zd \n", retLength);
+    return retLength;
 }
 //
 //ssize_t SocketUtil::setNonBlockMode(int socketHandle){

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2E137E791B009E1800A90984 /* ByteUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E137E771B009E1800A90984 /* ByteUtil.cpp */; };
+		2E4C57DF1B01AC4000D4EF42 /* DataOutputStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C57DE1B01AC4000D4EF42 /* DataOutputStream.cpp */; };
+		2E4C57E41B01D6B900D4EF42 /* Rijndael.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C57E21B01D6B900D4EF42 /* Rijndael.cpp */; };
 		8C38BEDA1AF689C900C3C38A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C38BED91AF689C900C3C38A /* main.cpp */; };
 		8C38BEE01AF68E6E00C3C38A /* SocketUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C38BEDE1AF68E6E00C3C38A /* SocketUtil.cpp */; };
 		8C5BD4421AFE598100AA52A1 /* SocketThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C5BD4401AFE598100AA52A1 /* SocketThread.cpp */; };
@@ -29,7 +31,10 @@
 /* Begin PBXFileReference section */
 		2E137E771B009E1800A90984 /* ByteUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ByteUtil.cpp; sourceTree = "<group>"; };
 		2E137E781B009E1800A90984 /* ByteUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ByteUtil.h; sourceTree = "<group>"; };
-		2E137E7B1B00BCE500A90984 /* common */ = {isa = PBXFileReference; lastKnownFileType = folder; path = common; sourceTree = SOURCE_ROOT; };
+		2E4C57DD1B01AC1A00D4EF42 /* DataOutputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataOutputStream.h; sourceTree = "<group>"; };
+		2E4C57DE1B01AC4000D4EF42 /* DataOutputStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DataOutputStream.cpp; sourceTree = "<group>"; };
+		2E4C57E21B01D6B900D4EF42 /* Rijndael.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Rijndael.cpp; sourceTree = "<group>"; };
+		2E4C57E31B01D6B900D4EF42 /* Rijndael.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rijndael.h; sourceTree = "<group>"; };
 		8C38BED61AF689C900C3C38A /* testProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = testProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C38BED91AF689C900C3C38A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8C38BEDE1AF68E6E00C3C38A /* SocketUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SocketUtil.cpp; sourceTree = "<group>"; };
@@ -53,6 +58,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E4C57E11B01D6B900D4EF42 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				2E4C57E21B01D6B900D4EF42 /* Rijndael.cpp */,
+				2E4C57E31B01D6B900D4EF42 /* Rijndael.h */,
+			);
+			path = common;
+			sourceTree = SOURCE_ROOT;
+		};
 		8C38BED71AF689C900C3C38A /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -64,10 +78,12 @@
 		8C38BED81AF689C900C3C38A /* testProject */ = {
 			isa = PBXGroup;
 			children = (
-				2E137E7B1B00BCE500A90984 /* common */,
+				2E4C57E11B01D6B900D4EF42 /* common */,
 				8C38BED91AF689C900C3C38A /* main.cpp */,
 				8C38BEDE1AF68E6E00C3C38A /* SocketUtil.cpp */,
 				8C38BEDF1AF68E6E00C3C38A /* SocketUtil.h */,
+				2E4C57DD1B01AC1A00D4EF42 /* DataOutputStream.h */,
+				2E4C57DE1B01AC4000D4EF42 /* DataOutputStream.cpp */,
 				8C5BD4401AFE598100AA52A1 /* SocketThread.cpp */,
 				8C5BD4411AFE598100AA52A1 /* SocketThread.h */,
 				8C5BD4431AFE6C9600AA52A1 /* ByteCircle.cpp */,
@@ -143,11 +159,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E4C57DF1B01AC4000D4EF42 /* DataOutputStream.cpp in Sources */,
 				8C38BEE01AF68E6E00C3C38A /* SocketUtil.cpp in Sources */,
 				8C5BD4451AFE6C9600AA52A1 /* ByteCircle.cpp in Sources */,
 				8C38BEDA1AF689C900C3C38A /* main.cpp in Sources */,
 				8C5BD4421AFE598100AA52A1 /* SocketThread.cpp in Sources */,
 				2E137E791B009E1800A90984 /* ByteUtil.cpp in Sources */,
+				2E4C57E41B01D6B900D4EF42 /* Rijndael.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
